@@ -1,5 +1,7 @@
 # GOSSAMER - A Grails HipChat Application
 
+**WORK IN PROGRESS. PLEASE DON'T REFER TO THIS YET**
+
 The aim of this application is to provide a basic framework for developing a
 sample HipChat application in Grails 3.1.x complete with JWT authentication.
 
