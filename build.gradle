@@ -40,6 +40,8 @@ dependencyManagement {
     applyMavenExclusions false
 }
 
+ext.springSecurityRestVersion = '2.0.0.M2'
+
 dependencies {
     compile "org.springframework.boot:spring-boot-starter-logging"
     compile "org.springframework.boot:spring-boot-autoconfigure"
@@ -60,8 +62,9 @@ dependencies {
     testCompile "org.grails.plugins:geb"
     testRuntime "org.seleniumhq.selenium:selenium-htmlunit-driver:2.47.1"
     testRuntime "net.sourceforge.htmlunit:htmlunit:2.18"
+    compile 'org.postgresql:postgresql:9.4-1206-jdbc42'
     compile 'org.grails.plugins:spring-security-core:3.1.1'
-
+    compile "org.grails.plugins:spring-security-rest:${springSecurityRestVersion}"
 }
 
 task wrapper(type: Wrapper) {
