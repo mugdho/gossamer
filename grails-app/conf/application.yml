@@ -9,15 +9,15 @@ hibernate:
 dataSource:
     pooled: true
     jmxExport: true
-    driverClassName: org.h2.Driver
-    username: sa
-    password:
+    driverClassName: org.postgresql.Driver
+    username: gossamer
+    password: gossamer
 
 environments:
     development:
         dataSource:
-            dbCreate: create-drop
-            url: jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+            dbCreate: update
+            url: jdbc:postgresql://localhost:5432/gossamer
     test:
         dataSource:
             dbCreate: update
@@ -122,6 +122,9 @@ grails:
             rest:
                 login:
                     endpointUrl: /session
+            token:
+                validation:
+                    enableAnonymousAccess: true
 
 endpoints:
     jmx:
