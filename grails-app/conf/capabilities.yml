@@ -1,0 +1,32 @@
+host: "8329825b.ngrok.io"
+descriptor:
+  name: "Gossamer"
+  description: "Hipchat starter addon"
+  key: "gossamer-hipchat-addon"
+  links:
+    homepage: "http://${host}/hipchat"
+    self: "http://${host}/descriptor"
+  vendor:
+    name: "Snowcrash"
+    url: "http://${host}"
+  capabilities:
+    hipchatApiConsumer:
+      fromName: "Gossamer"
+      scopes:
+        - "send_notification"
+    installable:
+      allowGlobal: true
+      allowRoom: true
+      callbackUrl: "http://${host}/installed"
+      uninstalledUrl: "http://${host}/uninstalled"
+    webhook:
+      - url: "http://8329825b.ngrok.io/build"
+        event: "room_message"
+        pattern: "^/build"
+        authentication: jwt
+        name: build
+      - url: "http://8329825b.ngrok.io/status"
+        event: "room_message"
+        pattern: "^/status"
+        authentication: jwt
+        name: build
