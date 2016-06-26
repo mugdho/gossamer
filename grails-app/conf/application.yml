@@ -5,6 +5,7 @@ hibernate:
         use_second_level_cache: true
         use_query_cache: false
         region.factory_class: 'org.hibernate.cache.ehcache.EhCacheRegionFactory'
+    dialect: net.kaleidos.hibernate.PostgresqlExtensionsDialect
 
 dataSource:
     pooled: true
@@ -12,6 +13,9 @@ dataSource:
     driverClassName: org.postgresql.Driver
     username: gossamer
     password: gossamer
+    postgresql:
+        extensions:
+            sequence_per_table: false
 
 environments:
     development:
